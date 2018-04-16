@@ -33,12 +33,17 @@ app.get('/pizzas', (req, res) => {
 
 // specific pizza page
 app.get('/pizzas/:id', (req, res) => {
-	let data = {
-		strTitle: 'Pizza',
-		arrPizzas: pizza
-	}
-	res.render('pizza/pizza-single', data);
+
+	console.log(req.params.id);
+
+	let arrPizza = pizza.filter(pizza => pizza.flavorKey == req.params.id);
+
+	console.log(arrPizza);
+
+	res.render('pizza/pizza-single', {pizza: arrPizza});
 });
+
+
 
 
 // last resort 404

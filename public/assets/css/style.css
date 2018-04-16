@@ -45,13 +45,17 @@ main {
 	margin: 2rem auto;
 }
 
-.pizzas li {
+.pizzas li, .pizza {
 	display: block;
 	text-align: center;
 }
 
 .pizzas img {
 	width: 100px;
+}
+
+.pizza img {
+	width: 300px;
 }
 
 .gray {

@@ -21,7 +21,13 @@
 
 	<main>
 
-		<h2><%= title %></h2>
+		<h2><%= pizza[0].flavor %></h2>
+
+		<p>Great choice...</p>
+
+		<p class="pizza">
+			<img src="<%= pizza[0].image %>" alt="<%= pizza[0].flavor %>"><br><%= pizza[0].flavor %> (<%= pizza[0].location %>)
+		</p>
 
 	</main>
 
