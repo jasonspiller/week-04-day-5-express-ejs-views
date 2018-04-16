@@ -23,7 +23,20 @@
 
 		<h2><%= strTitle %></h2>
 
-		<p><%= arrPizzas %></p>
+		<p>Feast your eyes on our glorious selection...</p>
+
+		<ul class="pizzas">
+		<!-- output pizza array -->
+		<% for (let i = 0; i < arrPizzas.length; i++) { %>
+
+			<li>
+
+				<img src="<%= arrPizzas[i].image %>" alt="<%= arrPizzas[i].flavor %>"><br><%= arrPizzas[i].flavor %> (<%= arrPizzas[i].location %>)
+
+			</li>
+
+		<% } %>
+		</ul>
 
 	</main>
 
