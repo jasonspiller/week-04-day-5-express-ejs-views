@@ -1,11 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:200,400,400i,700,900');
-
 @import url("//fonts.googleapis.com/css?family=Muli:200,400,400i,700,700i,900");
 
-
-html {
-
-}
 
 body {
 	margin: 0;
@@ -23,7 +17,49 @@ a:hover {
 	border-bottom: 1px solid #6ebe45;
 }
 
-h1 {
+header, nav, footer {
+	text-align: center;
+}
+
+h1 img {
+	height: 6rem;
+}
+
+h1 a:hover {
+	border-bottom: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline;
+	list-style: none;
+	margin: 1rem 1rem 1rem 0;
+}
+
+main {
+	width: 80%;
+	margin: 2rem auto;
+}
+
+
+
+.gray {
+	fill: #636466;
+}
+.light-gray {
+	fill: #c7c8ca
+}
+.green {
+	fill: #6ebe45;
+}
+
+/* 404 classes/overrides */
+
+.fourohfour h1 {
   display: block;
   position: absolute;
   top: 0;
@@ -33,11 +69,7 @@ h1 {
   max-width: 4em;
 }
 
-h1 a:hover {
-	border-bottom: none;
-}
-
-h2 {
+.fourohfour h2 {
 	position: absolute;
 	z-index: -1;
 	right: 0;
@@ -49,33 +81,14 @@ h2 {
 	letter-spacing: -3rem;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-}
 
-li {
-	list-style: none;
-	margin: 1rem 1rem 1rem 0;
-}
-
-main {
+.fourohfour  main {
 	margin: 3rem 0 0 13%;
 	width: 30%;
 }
 
 @media only screen and (max-width: 960px) {
-	main {
+	.fourohfour main {
 		width: 80%;
 	}
-}
-
-.gray {
-	fill: #636466;
-}
-.light-gray {
-	fill: #c7c8ca
-}
-.green {
-	fill: #6ebe45;
 }

@@ -8,13 +8,20 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
+// /* OLD error logger, static routes */
+// app.use(logger('dev'));
+// app.use('/static', express.static(path.join(__dirname, 'public')));
+
 /* set the view engine */
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-// /* error logger, static routes */
-// app.use(logger('dev'));
-// app.use('/static', express.static(path.join(__dirname, 'public')));
+
+
+app.get('/', (req, res) => {
+	let data = {h2: 'Hello World'}
+	res.render('index', data);
+});
 
 
 
