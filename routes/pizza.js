@@ -19,7 +19,7 @@ pizzasRoute.get('/:id', function(req, res) {
 pizzasRoute.get('/', function(req, res) {
 
 	let data = {
-		strTitle: 'Pizzas',
+		title: 'Pizzas',
 		arrPizzas: pizzas
 	}
 	res.render('./pizza/pizza-index', data);
