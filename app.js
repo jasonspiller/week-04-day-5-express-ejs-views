@@ -12,38 +12,12 @@ app.use(express.static('public'));
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-// data object
-const pizza = require('./db/pizza.js');
 
-
-// home page
-app.get('/', (req, res) => {
-	let data = {title: 'Welcome!'}
-	res.render('index', data);
-});
-
-// all pizzas page
-app.get('/pizzas', (req, res) => {
-	let data = {
-		strTitle: 'Pizzas',
-		arrPizzas: pizza
-	}
-	res.render('pizza/pizza-index', data);
-});
-
-// specific pizza page
-app.get('/pizzas/:id', (req, res) => {
-
-	console.log(req.params.id);
-
-	let arrPizza = pizza.filter(pizza => pizza.flavorKey == req.params.id);
-
-	console.log(arrPizza);
-
-	res.render('pizza/pizza-single', {pizza: arrPizza});
-});
-
-
+// setup routes
+const homepage = require('./routes/index')
+const pizzas = require('./routes/pizza')
+app.use('/', homepage);
+app.use('/pizzas', pizzas);
 
 
 // last resort 404

@@ -97,6 +97,14 @@ main {
 	width: 30%;
 }
 
+.fourohfour nav {
+	text-align: left;
+}
+
+.fourohfour nav li {
+	display: block;
+}
+
 @media only screen and (max-width: 960px) {
 	.fourohfour main {
 		width: 80%;
