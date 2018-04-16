@@ -4,25 +4,41 @@ const path = require('path');
 const morgan = require('morgan');
 const app = express();
 
-// add our middleware!
+// middleware
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
-// /* OLD error logger, static routes */
-// app.use(logger('dev'));
-// app.use('/static', express.static(path.join(__dirname, 'public')));
-
-/* set the view engine */
+// set up views
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
+// data object
+const pizza = require('./db/pizza.js');
 
 
+// home page
 app.get('/', (req, res) => {
-	let data = {h2: 'Hello World'}
+	let data = {title: 'Welcome!'}
 	res.render('index', data);
 });
 
+// all pizzas page
+app.get('/pizzas', (req, res) => {
+	let data = {
+		strTitle: 'Pizzas',
+		arrPizzas: pizza
+	}
+	res.render('pizza/pizza-index', data);
+});
+
+// specific pizza page
+app.get('/pizzas/:id', (req, res) => {
+	let data = {
+		strTitle: 'Pizza',
+		arrPizzas: pizza
+	}
+	res.render('pizza/pizza-single', data);
+});
 
 
 // last resort 404
